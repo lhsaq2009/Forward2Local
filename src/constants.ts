@@ -1,10 +1,10 @@
 export const REG = {
-  TRIM_JSON: /(,+)([^a-z0-9["])/gi,
-  CHROME_EXTENSION: /^chrome-extension:\/\//i,
-  // support [ ] ( ) \ * ^ $
-  FORWARD: /\\|\[|]|\(|\)|\*|\$|\^/i,
-  WHITESPACE: /\s+/g,
-  X_HEADER: /^x-/,
+    TRIM_JSON: /(,+)([^a-z0-9["])/gi,
+    CHROME_EXTENSION: /^chrome-extension:\/\//i,
+    // support [ ] ( ) \ * ^ $
+    FORWARD: /\\|\[|]|\(|\)|\*|\$|\^/i,
+    WHITESPACE: /\s+/g,
+    X_HEADER: /^x-/,
 };
 
 export const ALL_URLS = '<all_urls>';
@@ -12,12 +12,12 @@ export const BLOCKING = 'blocking';
 export const REQUEST_HEADERS = 'requestHeaders';
 export const RESPONSE_HEADERS = 'responseHeaders';
 export const DEFAULT_CREDENTIALS_RESPONSE_HEADERS =
-  'Content-Type, access-control-allow-headers, Authorization, X-Requested-With, X-Referer';
+    'Content-Type, access-control-allow-headers, Authorization, X-Requested-With, X-Referer';
 export const CORS = {
-  METHODS: 'access-control-allow-methods',
-  CREDENTIALS: 'access-control-allow-credentials',
-  ORIGIN: 'access-control-allow-origin',
-  HEADERS: 'access-control-allow-headers',
+    METHODS: 'access-control-allow-methods',
+    CREDENTIALS: 'access-control-allow-credentials',
+    ORIGIN: 'access-control-allow-origin',
+    HEADERS: 'access-control-allow-headers',
 };
 export const ACCESS_CONTROL_REQUEST_HEADERS = 'access-control-request-headers';
 export const DEFAULT_CORS_ORIGIN = '*';
@@ -62,8 +62,8 @@ export const SWITCH_CHECKED_CLASSNAME = 'ant-switch-checked';
 export const POPUP_HTML_PATH = 'XSwitch.html';
 export const PREFIX = process.env.NODE_ENV !== 'production' ? '/build/' : './';
 export const MONACO_VS_PATH = process.env.NODE_ENV !== 'production'
-  ? '/build/lib/monaco-editor/min/vs'
-  : './lib/monaco-editor/min/vs';
+    ? '/build/lib/monaco-editor/min/vs'
+    : './lib/monaco-editor/min/vs';
 export const MONACO_CONTRIBUTION_PATH = 'vs/language/json/monaco.contribution';
 export const HELP_URL = 'https://yuque.com/jiushen/blog/xswitch-readme';
 export const DEFAULT_FONT_FAMILY = 'Menlo, Monaco, "Courier New", monospace';

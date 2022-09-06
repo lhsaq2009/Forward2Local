@@ -1,37 +1,38 @@
-import { ViewController, observable, inject } from '@ali/recore';
-import { Checkbox } from 'antd';
-import { getOptions, setOptions } from '../../chrome-storage';
-import { Enabled } from '../../enums';
+import {ViewController, observable, inject} from '@ali/recore';
+import {Checkbox} from 'antd';
+import {getOptions, setOptions} from '../../chrome-storage';
+import {Enabled} from '../../enums';
 import './options.less';
+
 @inject({
-  components: { Checkbox },
+    components: {Checkbox},
 })
 export default class Options extends ViewController {
-  @observable
-  clearCacheEnabled = false;
+    @observable
+    clearCacheEnabled = false;
 
-  @observable
-  corsEnabled = false;
+    @observable
+    corsEnabled = false;
 
-  setOptionStorage() {
-    setOptions({
-      clearCacheEnabled: this.clearCacheEnabled,
-      corsEnabled: this.corsEnabled,
-    });
-  }
+    setOptionStorage() {
+        setOptions({
+            clearCacheEnabled: this.clearCacheEnabled,
+            corsEnabled: this.corsEnabled,
+        });
+    }
 
-  async $init() {
-    this.clearCacheEnabled = (await getOptions()).clearCacheEnabled !== Enabled.NO;
-    this.corsEnabled = (await getOptions()).corsEnabled !== Enabled.NO;
-  }
+    async $init() {
+        this.clearCacheEnabled = (await getOptions()).clearCacheEnabled !== Enabled.NO;
+        this.corsEnabled = (await getOptions()).corsEnabled !== Enabled.NO;
+    }
 
-  setClearCacheEnabled() {
-    this.clearCacheEnabled = !this.clearCacheEnabled;
-    this.setOptionStorage();
-  }
+    setClearCacheEnabled() {
+        this.clearCacheEnabled = !this.clearCacheEnabled;
+        this.setOptionStorage();
+    }
 
-  setCorsEnabled() {
-    this.corsEnabled = !this.corsEnabled;
-    this.setOptionStorage();
-  }
+    setCorsEnabled() {
+        this.corsEnabled = !this.corsEnabled;
+        this.setOptionStorage();
+    }
 }
